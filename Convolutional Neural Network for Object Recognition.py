@@ -2,7 +2,6 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Dropout, Dense, Flatten
 from keras.optimizers import SGD
-from keras.constraints import maxnorm
 from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.utils import np_utils as u
 from keras.datasets import cifar10
