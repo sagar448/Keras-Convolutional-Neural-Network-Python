@@ -153,9 +153,11 @@ We've built the model, done our configuration therefore we can now start trainin
 **Line 7** Finally, we display our accuracy after evaluating our test set.
 ## Conclusion and Development
 And we are done with our very own CNN! Here are additional features and other ways you can improve your CNN:
+- For prediction you could simple use the model.predict(x, batch_size=None, verbose=0, steps=None) to classify your image
 - When using dropout the weights can be suddenly put into a very bad situation causing them to fluctuate etc. So we can have another parameter in our Dense and Conv2D layers, kernel_constraint. We use this to set constraints on our weights, e.g. non-negativity. we do this by kernel_constraint=maxnorm(desiredValue). The maxnorm constrains the weights incident to each hidden unit to have a norm less than or equal to a desired value. (from keras.constraints import maxnorm)
 - In our compilation line we could have added another paramter called nestrov momentum. Nestrov=false is dafult but can be set to true to make converging faster. Here is more information on nestrov http://cs231n.github.io/neural-networks-3/#sgd. (nestrov=True)
 - For large datasets and having parameters like momentum active, having low batch size can cause errors. Anything lower than a 512 batch size would cause a warning such as method on batch end is slow compared to batch update. To fix this, simply increase batch size.
+- To further develop your CNN you could have more layers, a deeper CNN which would allow for a higher accuracy etc. You could train for more epochs.
 
 Thats all! For any questions or bugs do not hesitate to contact me!
 
