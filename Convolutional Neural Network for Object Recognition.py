@@ -11,7 +11,7 @@ from keras.datasets import cifar10
 
 #Keep in mind the images are in RGB
 #So we can normalise the data by diving by 255
-#The data is in integers therefore we need to convert hem to float first
+#The data is in integers therefore we need to convert them to float first
 X, X_test = X.astype('float32')/255.0, X_test.astype('float32')/255.0
 
 #Then we convert the y values into one-hot vectors
@@ -47,7 +47,7 @@ model.add(Dropout(0.3))
 model.add(Dense(10, activation='softmax'))
 #Few simple configurations
 model.compile(loss='categorical_crossentropy',
-              optimizer=SGD(momentum=0.5, decay=0.0004))#, nesterov=False), metrics=['accuracy'])
+              optimizer=SGD(momentum=0.5, decay=0.0004, metrics=['accuracy']))
 #Run the algorithm!
 model.fit(X, y, validation_data=(X_test, y_test), epochs=25,
           batch_size=512)
