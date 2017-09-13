@@ -55,3 +55,7 @@ model.fit(X, y, validation_data=(X_test, y_test), epochs=25,
 model.save_weights("cifar10.hdf5")
 #Finally print the accuracy of our model!
 print("Accuracy: &2.f%%" %(model.evaluate(X_test, y_test)[1]*100))
+#print(model.predict_classes(X[0:1]))
+#Prints out a number
+#1 - airplane, 2 - automobile, 3 - bird, 4 - cat, 5 - deer, 6 - dog
+#7 - frog, 8 - horse, 9 - ship, 10 - truck
