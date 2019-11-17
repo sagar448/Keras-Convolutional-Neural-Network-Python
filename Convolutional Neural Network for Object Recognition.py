@@ -47,7 +47,7 @@ model.add(Dropout(0.3))
 model.add(Dense(10, activation='softmax'))
 #Few simple configurations
 model.compile(loss='categorical_crossentropy',
-              optimizer=SGD(momentum=0.5, decay=0.0004, metrics=['accuracy']))
+              optimizer=SGD(momentum=0.5, decay=0.0004), metrics=['accuracy'])
 #Run the algorithm!
 model.fit(X, y, validation_data=(X_test, y_test), epochs=25,
           batch_size=512)
