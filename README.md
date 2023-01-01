@@ -57,7 +57,7 @@ cifar-10-bathces-py.tar.gz. You can then continue normally running the Python pr
 Like always Keras requires a unique format in order to process the data. Therefore we need to format our data
 ```python
 1    #Keep in mind the images are in RGB
-2    #So we can normalise the data by diving by 255
+2    #So we can normalise the data by divding by 255
 3    #The data is in integers therefore we need to convert them to float first
 4    X, X_test = X.astype('float32')/255.0, X_test.astype('float32')/255.0
 5    #Then we convert the y values into one-hot vectors
@@ -144,7 +144,7 @@ We've built the model, done our configuration therefore we can now start trainin
 4    #Save the weights to use for later
 5    model.save_weights("cifar10.hdf5")
 6    #Finally print the accuracy of our model!
-7    print("Accuracy: &2.f%%" %(model.evaluate(X_test, y_test)[1]*100))
+7    print("Accuracy: %2.f%%" %(model.evaluate(X_test, y_test)[1]*100))
 ```
 **Line 2** This line runs our model. Out of 50000 we take a consecutive 512 batches and run them 25 times each. (Batch size = 512, epoch = 25)
 
