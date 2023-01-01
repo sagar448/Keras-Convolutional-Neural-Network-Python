@@ -10,7 +10,7 @@ from keras.datasets import cifar10
 (X, y), (X_test, y_test) = cifar10.load_data()
 
 #Keep in mind the images are in RGB
-#So we can normalise the data by diving by 255
+#So we can normalise the data by divding by 255
 #The data is in integers therefore we need to convert them to float first
 X, X_test = X.astype('float32')/255.0, X_test.astype('float32')/255.0
 
@@ -54,7 +54,7 @@ model.fit(X, y, validation_data=(X_test, y_test), epochs=25,
 #Save the weights to use for later
 model.save_weights("cifar10.hdf5")
 #Finally print the accuracy of our model!
-print("Accuracy: &2.f%%" %(model.evaluate(X_test, y_test)[1]*100))
+print("Accuracy: %2.f%%" %(model.evaluate(X_test, y_test)[1]*100))
 #print(model.predict_classes(X[0:1]))
 #Prints out a number
 #1 - airplane, 2 - automobile, 3 - bird, 4 - cat, 5 - deer, 6 - dog
